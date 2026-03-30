@@ -50,6 +50,7 @@ export const Signup = () => {
       <div className="font-geist flex items-center justify-center h-screen w-screen  bg-background text-secondary-foreground">
         <form
           onSubmit={handleSubmit((data) => {
+            // @ts-ignore
             signupFun(data);
           })}
           className="flex flex-col gap-6 w-100"

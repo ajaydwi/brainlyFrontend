@@ -9,11 +9,10 @@ import { Video } from "../icons/VideoIcon";
 import { SharePopup } from "../components/SharePopup";
 import { AddContentPopup } from "../components/AddContentPopup";
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import axios from "axios";
 import { Profile } from "../components/Profile";
 import { ContentComp } from "../components/ContentComp";
-import { Toaster } from "react-hot-toast";
 import { HomeIcon } from "../icons/HomeIcon";
 import { LoadingComp } from "../components/LoadingComp";
 
@@ -21,8 +20,9 @@ export function Home() {
   const [openPopup, setOpenPopup] = useState(false);
   const [shareLink, setShareLink] = useState("");
   const [filter, setFiletr] = useState("Home"); // "Videos", 'Tweets","Documents", "Links"
+  const navigate = useNavigate();
   const [openAddContentPopup, setopenAddContentPopup] = useState(false);
-  const { isPending, data, error, isFetching } = useQuery({
+  const { data, isFetching } = useQuery({
     queryKey: ["dbData"],
     queryFn: async () => {
       const token = localStorage.getItem("token");
@@ -54,6 +54,8 @@ export function Home() {
   // Fetch content at home, initially
 
   const handleOpenAddContentPopup = () => {
+    const token = localStorage.getItem("token");
+    if (!token) navigate("/login");
     setopenAddContentPopup(true);
   };
 
@@ -167,8 +169,10 @@ export function Home() {
           <button
             className="cursor-pointer flex gap-2 px-5 rounded-xl py-2.5 bg-[#20212b] text-sm font-semibold items-center text-secondary-foreground "
             onClick={() => {
-              fetchShareBrain();
               handleOpenPopup();
+              fetchShareBrain();
+              const token = localStorage.getItem("token");
+              if (!token) navigate("/login");
             }}
           >
             <ShareIcon />

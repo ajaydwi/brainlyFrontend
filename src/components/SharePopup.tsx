@@ -1,7 +1,6 @@
-import { useNavigate } from "react-router";
 import { CancelIcon } from "../icons/CancelIcon";
 import { CopyIcon } from "../icons/CopyIcon";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 type Props = {
   openPopup: boolean;
@@ -9,8 +8,6 @@ type Props = {
   numberOfData: number;
   closePopup: () => void;
 };
-
-const token = localStorage.getItem("token");
 
 const notify = () => toast("Link copied to clipboard", { duration: 1000 });
 
@@ -20,8 +17,6 @@ export const SharePopup = ({
   shareLink,
   numberOfData,
 }: Props) => {
-  const navigate = useNavigate();
-
   const handleClosePopup = (event: React.MouseEvent<HTMLDivElement>) => {
     if ((event.target as HTMLDivElement).id === "modelContainer") {
       closePopup();
@@ -39,8 +34,6 @@ export const SharePopup = ({
       closePopup();
     });
   }
-
-  if (openPopup && !token) navigate("/login");
 
   return (
     <div

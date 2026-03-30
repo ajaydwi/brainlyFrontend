@@ -3,21 +3,19 @@ import { CancelIcon } from "../icons/CancelIcon";
 import axios from "axios";
 import { useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router";
+import { useState } from "react";
 
 type Props = {
   openAddContentPopup: boolean;
   closePopup: () => void;
 };
 
-const token = localStorage.getItem("token");
-
 const notify = () => toast.success("created successfully!");
 
 export const AddContentPopup = ({ openAddContentPopup, closePopup }: Props) => {
   const { register, handleSubmit, reset } = useForm();
   const queryClient = useQueryClient();
-  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleClosePopup = (event: React.MouseEvent<HTMLDivElement>) => {
     if ((event.target as HTMLDivElement).id === "modelContainer") {
@@ -27,8 +25,8 @@ export const AddContentPopup = ({ openAddContentPopup, closePopup }: Props) => {
   // @ts-ignore
   const handleFormSubmit = async (data) => {
     try {
+      setIsLoading(true);
       const token = localStorage.getItem("token");
-      console.log(data);
       await axios({
         method: "post",
         url: "https://brainly-production-bb1a.up.railway.app/content",
@@ -40,12 +38,11 @@ export const AddContentPopup = ({ openAddContentPopup, closePopup }: Props) => {
       reset();
       queryClient.invalidateQueries({ queryKey: ["dbData"] });
     } catch (err) {
+      setIsLoading(false);
       console.log(err);
       toast.error("failed!, Please try again");
     }
   };
-
-  if (openAddContentPopup && !token) navigate("/login");
 
   return (
     <div
@@ -118,10 +115,11 @@ export const AddContentPopup = ({ openAddContentPopup, closePopup }: Props) => {
               />
             </div>
             <button
+              disabled={isLoading ? true : false}
               type="submit"
-              className="rounded-md w-full bg-[#2020cc] flex justify-center p-3 gap-3 cursor-pointer items-center text-card-foreground"
+              className={`rounded-md w-full bg-[#2020cc] flex justify-center p-3 gap-3 cursor-pointer items-center text-card-foreground `}
             >
-              <span>Add Content</span>
+              <span>{isLoading ? "Adding... " : "Add Content"}</span>
             </button>
           </form>
         </div>

@@ -18,7 +18,7 @@ export const ContentComp = ({ data, filter }) => {
         </div>
         {/* Content Box Row */}
         <div className="flex gap-4 mt-10 flex-wrap ">
-          {data
+          {data // @ts-ignore
             ? data.map((item) => {
                 if (filter) {
                   if (filter == "Videos") {

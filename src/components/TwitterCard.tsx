@@ -1,6 +1,5 @@
 import axios from "axios";
 import { DeleteIcon } from "../icons/DeleteIcon";
-import { Document } from "../icons/DocumentIcon";
 import { useQueryClient } from "@tanstack/react-query";
 import { Twitter } from "../icons/TwitterIcon";
 import toast from "react-hot-toast";

@@ -28,7 +28,7 @@ export const SharePopup = ({
   }
 
   function copyClipboard() {
-    const link = `http://localhost:5173${shareLink}`;
+    const link = `https://brainly-frontend-omega-eight.vercel.app/${shareLink}`;
     navigator.clipboard.writeText(link).then(() => {
       notify();
       closePopup();

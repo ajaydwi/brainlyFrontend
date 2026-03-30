@@ -22,7 +22,7 @@ export function Home() {
   const [filter, setFiletr] = useState("Home"); // "Videos", 'Tweets","Documents", "Links"
   const navigate = useNavigate();
   const [openAddContentPopup, setopenAddContentPopup] = useState(false);
-  const { data, isFetching } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["dbData"],
     queryFn: async () => {
       const token = localStorage.getItem("token");
@@ -204,7 +204,7 @@ export function Home() {
         openAddContentPopup={openAddContentPopup}
         closePopup={handleRemoveAddContentPopup}
       />
-      <LoadingComp isFetching={isFetching} />
+      <LoadingComp isFetching={isLoading} />
     </div>
   );
 }

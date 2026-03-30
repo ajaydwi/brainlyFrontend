@@ -28,7 +28,7 @@ export const SharePopup = ({
   }
 
   function copyClipboard() {
-    const link = `https://brainly-frontend-omega-eight.vercel.app/${shareLink}`;
+    const link = `https://brainly-frontend-omega-eight.vercel.app${shareLink}`;
     navigator.clipboard.writeText(link).then(() => {
       notify();
       closePopup();
@@ -65,11 +65,17 @@ export const SharePopup = ({
             className="rounded-md w-full bg-dark-primary flex justify-center p-3 gap-3 cursor-pointer items-center text-card-foreground"
             onClick={copyClipboard}
           >
-            <CopyIcon
-              color="text-sidebar-foreground/70"
-              hover="group-hover:text-sidebar-primary"
-            />
-            <span>Share Brain</span>
+            {shareLink ? (
+              <>
+                <CopyIcon
+                  color="text-sidebar-foreground/70"
+                  hover="group-hover:text-sidebar-primary"
+                />
+                <span>Share Brain</span>
+              </>
+            ) : (
+              <span>wait...</span>
+            )}
           </button>
           <p className="text-center text-sm text-muted-foreground">
             {numberOfData} items will be shared

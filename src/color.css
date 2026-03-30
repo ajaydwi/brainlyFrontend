@@ -1,0 +1,43 @@
+/* 
+// Latest Version (Dark Mode) - All Formats
+
+| Color Token | OKLch | Hex | RGB
+|-----|-----|-----|-----
+| **Background** | `oklch(0.11 0.02 280)` | `#0f1419` | `rgb(15, 20, 25)`
+| **Foreground** | `oklch(0.95 0.01 280)` | `#f2f2f5` | `rgb(242, 242, 245)`
+| **Card** | `oklch(0.16 0.02 280)` | `#1a1f2e` | `rgb(26, 31, 46)`
+| **Card Foreground** | `oklch(0.95 0.01 280)` | `#f2f2f5` | `rgb(242, 242, 245)`
+| **Primary** | `oklch(0.65 0.25 280)` | `#6366f1` | `rgb(99, 102, 241)`
+| **Primary Foreground** | `oklch(0.11 0.02 280)` | `#0f1419` | `rgb(15, 20, 25)`
+| **Secondary** | `oklch(0.16 0.02 280)` | `#1a1f2e` | `rgb(26, 31, 46)`
+| **Secondary Foreground** | `oklch(0.95 0.01 280)` | `#f2f2f5` | `rgb(242, 242, 245)`
+| **Muted** | `oklch(0.25 0.02 280)` | `#3b4351` | `rgb(59, 67, 81)`
+| **Muted Foreground** | `oklch(0.65 0.02 280)` | `#a0a9b8` | `rgb(160, 169, 184)`
+| **Accent** | `oklch(0.70 0.22 40)` | `#d4a574` | `rgb(212, 165, 116)`
+| **Accent Foreground** | `oklch(0.11 0.02 280)` | `#0f1419` | `rgb(15, 20, 25)`
+| **Border** | `oklch(0.22 0.02 280)` | `#323d4d` | `rgb(50, 61, 77)`
+| **Input** | `oklch(0.20 0.02 280)` | `#2a3447` | `rgb(42, 52, 71)`
+| **Destructive** | `oklch(0.62 0.22 25)` | `#e74c3c` | `rgb(231, 76, 60)`
+| **Destructive Foreground** | `oklch(0.95 0.01 280)` | `#f2f2f5` | `rgb(242, 242, 245)`
+
+
+## Sidebar Colors
+
+| Color Token | OKLch | Hex
+|-----|-----|-----|-----
+| **Sidebar** | `oklch(0.14 0.02 280)` | `#17191f`
+| **Sidebar Foreground** | `oklch(0.95 0.01 280)` | `#f2f2f5`
+| **Sidebar Primary** | `oklch(0.65 0.25 280)` | `#6366f1`
+| **Sidebar Border** | `oklch(0.22 0.02 280)` | `#323d4d`
+
+
+## Key Colors Summary
+
+- **Dark Background**: `#0f1419` (nearly black)
+- **Light Text**: `#f2f2f5` (almost white)
+- **Primary Purple**: `#6366f1` (vibrant indigo)
+- **Accent Gold**: `#d4a574` (warm amber)
+- **Border/Muted**: `#323d4d` (dark gray)
+
+
+Choose the format that works best for your needs—OKLch for design systems, Hex for CSS/web development, or RGB for other applications. */

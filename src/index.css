@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-geist: "Geist", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+
+  /* Base */
+  /* --color-background: #0f1419; */
+  /* --color-background: lch(0.11 0.02 280); */
+  --color-background: #04040b;
+  --color-foreground: #f2f2f5;
+
+  /* Card */
+  --color-card: #0b0c16;
+  --color-card-foreground: #f2f2f5;
+  --color-card-icon: #7a6eff1a; /* Primary */
+  --color-primary: #6366f1;
+  --color-primary-foreground: #0f1419;
+
+  /* Secondary */
+  --color-secondary: #1a1f2e;
+  --color-secondary-foreground: #f2f2f5;
+
+  /* Muted */
+  --color-muted: #3b4351;
+  --color-muted-foreground: oklch(0.65 0.02 280);
+  --color-share-button-bg: #20212b /* Accent */
+    --color-share-button-foreground: oklch(0.95 0.01 280) /* Accent */
+    --color-accent: #d4a574;
+  --color-accent-foreground: #0f1419;
+
+  /* Border & Input */
+  --color-border: #323d4d;
+  --color-input: #2a3447;
+
+  /* Destructive */
+  --color-destructive: #e74c3c;
+  --color-destructive-foreground: #f2f2f5;
+
+  /* Sidebar */
+  --color-sidebar: #17191f;
+  /* --color-sidebar-background: oklch(0.14 0.02 280); */
+  /* --color-sidebar-background: #04040b; */
+  --color-sidebar-background: #080811;
+  --color-sidebar-hover-background: #20212b;
+  --color-sidebar-active-background: #1b1c24;
+  --color-sidebar-foreground: #f2f2f5;
+  --color-sidebar-primary: #6366f1;
+  --color-dark-primary: oklch(0.55 0.2 280);
+  /* --color-sidebar-border: #323d4d; */
+  --color-sidebar-border: #191a24;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #04040b;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: oklch(48.026% 0.01286 280.187);
+  border-radius: 100vh;
+  border: 3px solid #04040b;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #c0a0b9;
+}
+
+/* 
+
+ Primary Colors (OKLch Format)
+
+| Color Token | OKLch Value | Usage
+|-----|-----|-----
+| **Background** | `oklch(0.11 0.02 280)` | Main page background
+| **Foreground** | `oklch(0.95 0.01 280)` | Primary text color
+| **Card** | `oklch(0.16 0.02 280)` | Card/container backgrounds
+| **Card Foreground** | `oklch(0.95 0.01 280)` | Text on cards
+| **Primary** | `oklch(0.65 0.25 280)` | Purple-blue accent (buttons, links)
+| **Primary Foreground** | `oklch(0.11 0.02 280)` | Text on primary elements
+| **Accent** | `oklch(0.70 0.22 40)` | Golden/amber accent color
+| **Accent Foreground** | `oklch(0.11 0.02 280)` | Text on accent elements
+| **Muted** | `oklch(0.25 0.02 280)` | Muted backgrounds
+| **Muted Foreground** | `oklch(0.65 0.02 280)` | Muted text
+| **Border** | `oklch(0.22 0.02 280)` | Border color
+| **Input** | `oklch(0.20 0.02 280)` | Input field background
+| **Destructive** | `oklch(0.62 0.22 25)` | Red/danger color
+| **Destructive Foreground** | `oklch(0.95 0.01 280)` | Text on destructive elements
+
+
+ Sidebar Colors
+
+| Color Token | OKLch Value
+|-----|-----|-----
+| **Sidebar** | `oklch(0.14 0.02 280)`
+| **Sidebar Foreground** | `oklch(0.95 0.01 280)`
+| **Sidebar Primary** | `oklch(0.65 0.25 280)`
+| **Sidebar Primary Foreground** | `oklch(0.11 0.02 280)`
+| **Sidebar Accent** | `oklch(0.25 0.02 280)`
+| **Sidebar Accent Foreground** | `oklch(0.95 0.01 280)`
+| **Sidebar Border** | `oklch(0.22 0.02 280)`
+
+
+Chart Colors
+
+| Chart | OKLch Value
+|-----|-----|-----
+| **Chart 1** | `oklch(0.65 0.25 280)`
+| **Chart 2** | `oklch(0.70 0.22 40)`
+| **Chart 3** | `oklch(0.60 0.20 160)`
+| **Chart 4** | `oklch(0.75 0.18 200)`
+| **Chart 5** | `oklch(0.55 0.20 280)`
+
+
+ Other
+
+| Property | Value
+|-----|-----|-----
+| **Border Radius** | `0.625rem`
+
+
+All colors use the **OKLch color space** format: `oklch(lightness saturation hue)`. The dark mode uses deep dark backgrounds (lightness ~0.11-0.25) with vibrant purple-blue primary colors and golden accents for visual pop. */
